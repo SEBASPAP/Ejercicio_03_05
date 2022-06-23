@@ -5,9 +5,6 @@
 package Vista;
 
 
-import Modelo.Actor;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,20 +29,6 @@ public class Principal extends javax.swing.JFrame {
 
     }
 
-//    public void cargarActorTabla(JTable TablaActorp) {
-//        DefaultTableModel modelo = (DefaultTableModel) TablaActorp.getModel();
-//        modelo.setRowCount(0);
-//        for (Actor actor : actorCtrl.listar()) {
-//            Object[] rowData = {actor.getNombre(),
-//                actor.getNacionalidad(),
-//                actor.getFechanacimiento(),
-//                actor.getEdad(),
-//                actor.getPelicula().getNombre(),
-//                actor.getPersonaje().getNombrePer(),};
-//            modelo.addRow(rowData);
-//        }
-//        TablaActorp.setModel(modelo);
-//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -177,6 +160,10 @@ public class Principal extends javax.swing.JFrame {
         v1.getBtnlistar().setEnabled(true);
         v1.getBtneliminar().setEnabled(false);
         v1.getBtnmodificar().setEnabled(false);
+        v1.getTxtnombre().setEnabled(true); 
+        v1.getTxtnacionalidad().setEnabled(true);
+        v1.getTxtfecha().setEnabled(true);
+        v1.getTxtedad().setEnabled(true);
     }//GEN-LAST:event_menuCrearActorActionPerformed
 
     private void menuCrearPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearPersonajeActionPerformed
@@ -196,7 +183,10 @@ public class Principal extends javax.swing.JFrame {
         v1.getBtncrear().setEnabled(false);
         v1.getBtnlistar().setEnabled(false);
         v1.getBtnmodificar().setEnabled(true);
-        //cargarActorTabla(v1.getTablaActor());
+        v1.getTxtnombre().setEnabled(false); 
+        v1.getTxtnacionalidad().setEnabled(true);
+        v1.getTxtfecha().setEnabled(true);
+        v1.getTxtedad().setEnabled(true);
     }//GEN-LAST:event_menuModActorActionPerformed
 
     private void menuElimActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuElimActorActionPerformed
@@ -206,6 +196,10 @@ public class Principal extends javax.swing.JFrame {
         v1.getBtncrear().setEnabled(false);
         v1.getBtnlistar().setEnabled(false);
         v1.getBtneliminar().setEnabled(true);
+        v1.getTxtnombre().setEnabled(false);
+        v1.getTxtnacionalidad().setEnabled(false);
+        v1.getTxtfecha().setEnabled(false);
+        v1.getTxtedad().setEnabled(false);
     }//GEN-LAST:event_menuElimActorActionPerformed
 
     /**

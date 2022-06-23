@@ -11,7 +11,10 @@ import Controlador.PeliculaControl;
 import Controlador.PersonajeControl;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author paulp
@@ -21,7 +24,7 @@ public class ActVentana extends javax.swing.JInternalFrame {
     private ActorControl actorCtrl;
     private PersonajeControl personajeControl;
     private PeliculaControl peliculaControl;
-    
+
     public ActVentana() {
         initComponents();
         actorCtrl = new ActorControl();
@@ -61,9 +64,21 @@ public class ActVentana extends javax.swing.JInternalFrame {
         return btnmodificar;
     }
 
-//    public JTable getTablaActor() {
-//        return TablaActor;
-//    }
+    public JTextField getTxtnombre() {
+        return txtnombre;
+    }
+
+    public JTextField getTxtedad() {
+        return txtedad;
+    }
+
+    public JTextField getTxtfecha() {
+        return txtfecha;
+    }
+
+    public JTextField getTxtnacionalidad() {
+        return txtnacionalidad;
+    }
 
     
     /**
@@ -92,6 +107,7 @@ public class ActVentana extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setMaximizable(true);
         setTitle("ACTOR/ACTRIZ");
 
         TablaActor.setModel(new javax.swing.table.DefaultTableModel(
@@ -229,13 +245,13 @@ public class ActVentana extends javax.swing.JInternalFrame {
         int fecha = (int) TablaActor.getValueAt(fila, 2);
         int edad = (int) TablaActor.getValueAt(fila, 3);
 
-       // btncrear.setEnabled(false);
-        txtnombre.setEnabled(false);
         txtnombre.setText(nombre);
         txtnacionalidad.setText(nacionalidad);
         txtfecha.setText(String.valueOf(fecha));
         txtedad.setText(String.valueOf(edad));
     }//GEN-LAST:event_TablaActorMouseClicked
+
+
 
     private void btncrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearActionPerformed
         String nombre = txtnombre.getText();
@@ -256,7 +272,7 @@ public class ActVentana extends javax.swing.JInternalFrame {
                 params[0] = nombre;
                 params[1] = nacionalidad;
 
-                actorCtrl.crear(params, fecha, edad,personajeControl.buscar(nombre),peliculaControl.buscar(nombre));
+                actorCtrl.crear(params, fecha, edad, personajeControl.buscar(nombre), peliculaControl.buscar(nombre));
             }
         }
 
@@ -287,7 +303,7 @@ public class ActVentana extends javax.swing.JInternalFrame {
                 params[0] = nombre;
                 params[1] = nacionalidad;
 
-                actorCtrl.crear(params, fecha, edad,personajeControl.buscar(nombre),peliculaControl.buscar(nombre));
+                actorCtrl.crear(params, fecha, edad, personajeControl.buscar(nombre), peliculaControl.buscar(nombre));
             }
         }
         cargarActorTabla();
@@ -295,7 +311,7 @@ public class ActVentana extends javax.swing.JInternalFrame {
         txtnacionalidad.setText("");
         txtfecha.setText("");
         txtedad.setText("");
-        
+
         JOptionPane.showMessageDialog(null, "Datos Ingresados Correctamente");
     }//GEN-LAST:event_btnlistarActionPerformed
 
@@ -313,16 +329,15 @@ public class ActVentana extends javax.swing.JInternalFrame {
             params[0] = nombre;
             params[1] = nacionalidad;
 
-            actorCtrl.modificar(params, fecha, edad,personajeControl.buscar(nombre),peliculaControl.buscar(nombre));
+            actorCtrl.modificar(params, fecha, edad, personajeControl.buscar(nombre), peliculaControl.buscar(nombre));
         }
         cargarActorTabla();
 
-        txtnombre.setEnabled(true);
         txtnombre.setText("");
         txtnacionalidad.setText("");
         txtfecha.setText("");
         txtedad.setText("");
-        
+
         JOptionPane.showMessageDialog(null, "Datos Modificados Correctamente");
     }//GEN-LAST:event_btnmodificarActionPerformed
 
@@ -331,13 +346,12 @@ public class ActVentana extends javax.swing.JInternalFrame {
         String nombre = txtnombre.getText();
         actorCtrl.eliminar(nombre);
         cargarActorTabla();
-        
-        txtnombre.setEnabled(true);
+
         txtnombre.setText("");
         txtnacionalidad.setText("");
         txtfecha.setText("");
         txtedad.setText("");
-        
+
         JOptionPane.showMessageDialog(null, "Datos Eliminados Correctamente");
     }//GEN-LAST:event_btneliminarActionPerformed
 

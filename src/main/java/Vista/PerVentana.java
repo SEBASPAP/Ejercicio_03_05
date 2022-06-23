@@ -60,6 +60,7 @@ public class PerVentana extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setMaximizable(true);
         setTitle("PERSONAJE");
 
         btnListar.setText("LISTAR");

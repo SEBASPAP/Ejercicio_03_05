@@ -66,6 +66,7 @@ public class PeliVentana extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setMaximizable(true);
         setTitle("PELICULA");
 
         jLabel6.setText("ACTOR:");
