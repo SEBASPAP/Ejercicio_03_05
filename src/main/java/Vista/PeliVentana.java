@@ -6,6 +6,7 @@ package Vista;
 
 import Controlador.PeliculaControl;
 import Modelo.Pelicula;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -255,6 +256,8 @@ public class PeliVentana extends javax.swing.JInternalFrame {
         txtgenero.setText("");
         txtpais.setText("");
         txtfecha.setText("");
+        
+        JOptionPane.showMessageDialog(null, "Datos Ingresados Correctamente");
     }//GEN-LAST:event_btnlistarActionPerformed
 
 

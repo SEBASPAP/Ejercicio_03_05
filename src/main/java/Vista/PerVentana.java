@@ -6,6 +6,7 @@ package Vista;
 
 import Controlador.PersonajeControl;
 import Modelo.Personaje;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -123,7 +124,7 @@ public class PerVentana extends javax.swing.JInternalFrame {
                         .addComponent(btnCrear)
                         .addGap(50, 50, 50)
                         .addComponent(btnListar)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,8 +154,8 @@ public class PerVentana extends javax.swing.JInternalFrame {
                     .addComponent(btnCrear)
                     .addComponent(btnListar))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92))
         );
 
         pack();
@@ -183,6 +184,8 @@ public class PerVentana extends javax.swing.JInternalFrame {
         txtnomper.setText("");
         txtrol.setText("");
         txtgenero.setText("");
+        
+        JOptionPane.showMessageDialog(null, "Datos Ingresados Correctamente");
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed

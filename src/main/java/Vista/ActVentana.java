@@ -9,6 +9,7 @@ import Modelo.Actor;
 import javax.swing.table.DefaultTableModel;
 import Controlador.PeliculaControl;
 import Controlador.PersonajeControl;
+import javax.swing.JOptionPane;
 /**
  *
  * @author paulp
@@ -204,6 +205,8 @@ public class ActVentana extends javax.swing.JInternalFrame {
         int fecha = (int) TablaActor.getValueAt(fila, 2);
         int edad = (int) TablaActor.getValueAt(fila, 3);
 
+       // btncrear.setEnabled(false);
+        txtnombre.setEnabled(false);
         txtnombre.setText(nombre);
         txtnacionalidad.setText(nacionalidad);
         txtfecha.setText(String.valueOf(fecha));
@@ -268,6 +271,8 @@ public class ActVentana extends javax.swing.JInternalFrame {
         txtnacionalidad.setText("");
         txtfecha.setText("");
         txtedad.setText("");
+        
+        JOptionPane.showMessageDialog(null, "Datos Ingresados Correctamente");
     }//GEN-LAST:event_btnlistarActionPerformed
 
     private void btnmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmodificarActionPerformed
@@ -292,6 +297,8 @@ public class ActVentana extends javax.swing.JInternalFrame {
         txtnacionalidad.setText("");
         txtfecha.setText("");
         txtedad.setText("");
+        
+        JOptionPane.showMessageDialog(null, "Datos Modificados Correctamente");
     }//GEN-LAST:event_btnmodificarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
@@ -303,6 +310,8 @@ public class ActVentana extends javax.swing.JInternalFrame {
         txtnacionalidad.setText("");
         txtfecha.setText("");
         txtedad.setText("");
+        
+        JOptionPane.showMessageDialog(null, "Datos Eliminados Correctamente");
     }//GEN-LAST:event_btneliminarActionPerformed
 
 

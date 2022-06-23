@@ -15,6 +15,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -61,11 +62,11 @@ public class Principal extends javax.swing.JFrame {
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
+            .addGap(0, 819, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 437, Short.MAX_VALUE)
+            .addGap(0, 515, Short.MAX_VALUE)
         );
 
         menuPersonaje.setText("Personaje");
@@ -107,10 +108,20 @@ public class Principal extends javax.swing.JFrame {
 
         menuModActor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuModActor.setText("Modificar Actor");
+        menuModActor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuModActorActionPerformed(evt);
+            }
+        });
         menuActor.add(menuModActor);
 
         menuElimActor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menuElimActor.setText("Eliminar Actor");
+        menuElimActor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuElimActorActionPerformed(evt);
+            }
+        });
         menuActor.add(menuElimActor);
 
         jMenuBar1.add(menuActor);
@@ -121,11 +132,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio)
         );
 
         pack();
@@ -135,6 +146,7 @@ public class Principal extends javax.swing.JFrame {
         ActVentana v1 = new ActVentana();
         escritorio.add(v1);
         v1.setVisible(true);
+        
     }//GEN-LAST:event_menuCrearActorActionPerformed
 
     private void menuCrearPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearPersonajeActionPerformed
@@ -146,8 +158,20 @@ public class Principal extends javax.swing.JFrame {
     private void menuCrearPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearPeliculaActionPerformed
         PeliVentana v1 = new PeliVentana();
         escritorio.add(v1);
-        v1.setVisible(true);
+        v1.setVisible(true);    
     }//GEN-LAST:event_menuCrearPeliculaActionPerformed
+
+    private void menuModActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuModActorActionPerformed
+        ActVentana v1 = new ActVentana();
+        escritorio.add(v1);
+        v1.setVisible(true);
+    }//GEN-LAST:event_menuModActorActionPerformed
+
+    private void menuElimActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuElimActorActionPerformed
+        ActVentana v1 = new ActVentana();
+        escritorio.add(v1);
+        v1.setVisible(true);
+    }//GEN-LAST:event_menuElimActorActionPerformed
 
     /**
      * @param args the command line arguments
