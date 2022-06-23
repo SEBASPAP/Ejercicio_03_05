@@ -9,7 +9,9 @@ import Modelo.Actor;
 import javax.swing.table.DefaultTableModel;
 import Controlador.PeliculaControl;
 import Controlador.PersonajeControl;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 /**
  *
  * @author paulp
@@ -19,12 +21,13 @@ public class ActVentana extends javax.swing.JInternalFrame {
     private ActorControl actorCtrl;
     private PersonajeControl personajeControl;
     private PeliculaControl peliculaControl;
-
+    
     public ActVentana() {
         initComponents();
         actorCtrl = new ActorControl();
         personajeControl = new PersonajeControl();
         peliculaControl = new PeliculaControl();
+        this.cargarActorTabla();
     }
 
     public void cargarActorTabla() {
@@ -42,6 +45,27 @@ public class ActVentana extends javax.swing.JInternalFrame {
         TablaActor.setModel(modelo);
     }
 
+    public JButton getBtncrear() {
+        return btncrear;
+    }
+
+    public JButton getBtneliminar() {
+        return btneliminar;
+    }
+
+    public JButton getBtnlistar() {
+        return btnlistar;
+    }
+
+    public JButton getBtnmodificar() {
+        return btnmodificar;
+    }
+
+//    public JTable getTablaActor() {
+//        return TablaActor;
+//    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -293,6 +317,7 @@ public class ActVentana extends javax.swing.JInternalFrame {
         }
         cargarActorTabla();
 
+        txtnombre.setEnabled(true);
         txtnombre.setText("");
         txtnacionalidad.setText("");
         txtfecha.setText("");
@@ -306,6 +331,8 @@ public class ActVentana extends javax.swing.JInternalFrame {
         String nombre = txtnombre.getText();
         actorCtrl.eliminar(nombre);
         cargarActorTabla();
+        
+        txtnombre.setEnabled(true);
         txtnombre.setText("");
         txtnacionalidad.setText("");
         txtfecha.setText("");

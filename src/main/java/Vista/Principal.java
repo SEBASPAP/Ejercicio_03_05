@@ -4,20 +4,48 @@
  */
 package Vista;
 
+
+import Modelo.Actor;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author paulp
  */
 public class Principal extends javax.swing.JFrame {
 
+    private ActVentana v1;
+    private PerVentana v2;
+    private PeliVentana v3;
+        
+  
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
+        v1 = new ActVentana();
+        v2 = new PerVentana();
+        v3 = new PeliVentana();
+
     }
 
+//    public void cargarActorTabla(JTable TablaActorp) {
+//        DefaultTableModel modelo = (DefaultTableModel) TablaActorp.getModel();
+//        modelo.setRowCount(0);
+//        for (Actor actor : actorCtrl.listar()) {
+//            Object[] rowData = {actor.getNombre(),
+//                actor.getNacionalidad(),
+//                actor.getFechanacimiento(),
+//                actor.getEdad(),
+//                actor.getPelicula().getNombre(),
+//                actor.getPersonaje().getNombrePer(),};
+//            modelo.addRow(rowData);
+//        }
+//        TablaActorp.setModel(modelo);
+//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -143,34 +171,41 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuCrearActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearActorActionPerformed
-        ActVentana v1 = new ActVentana();
         escritorio.add(v1);
         v1.setVisible(true);
-        
+        v1.getBtncrear().setEnabled(true);
+        v1.getBtnlistar().setEnabled(true);
+        v1.getBtneliminar().setEnabled(false);
+        v1.getBtnmodificar().setEnabled(false);
     }//GEN-LAST:event_menuCrearActorActionPerformed
 
     private void menuCrearPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearPersonajeActionPerformed
-        PerVentana v1 = new PerVentana();
-        escritorio.add(v1);
-        v1.setVisible(true);
+        escritorio.add(v2);
+        v2.setVisible(true);
     }//GEN-LAST:event_menuCrearPersonajeActionPerformed
 
     private void menuCrearPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCrearPeliculaActionPerformed
-        PeliVentana v1 = new PeliVentana();
-        escritorio.add(v1);
-        v1.setVisible(true);    
+        escritorio.add(v3);
+        v3.setVisible(true);    
     }//GEN-LAST:event_menuCrearPeliculaActionPerformed
 
     private void menuModActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuModActorActionPerformed
-        ActVentana v1 = new ActVentana();
         escritorio.add(v1);
         v1.setVisible(true);
+        v1.getBtneliminar().setEnabled(false);
+        v1.getBtncrear().setEnabled(false);
+        v1.getBtnlistar().setEnabled(false);
+        v1.getBtnmodificar().setEnabled(true);
+        //cargarActorTabla(v1.getTablaActor());
     }//GEN-LAST:event_menuModActorActionPerformed
 
     private void menuElimActorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuElimActorActionPerformed
-        ActVentana v1 = new ActVentana();
         escritorio.add(v1);
         v1.setVisible(true);
+        v1.getBtnmodificar().setEnabled(false);
+        v1.getBtncrear().setEnabled(false);
+        v1.getBtnlistar().setEnabled(false);
+        v1.getBtneliminar().setEnabled(true);
     }//GEN-LAST:event_menuElimActorActionPerformed
 
     /**
