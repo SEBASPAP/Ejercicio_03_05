@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Vista;
 
@@ -11,17 +11,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author paulp
  */
-public class PersonajeVentana extends javax.swing.JFrame {
+public class PerVentana extends javax.swing.JInternalFrame {
+
+     private PersonajeControl personajeCtrl;
 
     /**
      * Creates new form PersonajeVentana
      */
-   private PersonajeControl personajeCtrl;
-
-    /**
-     * Creates new form PersonajeVentana
-     */
-    public PersonajeVentana() {
+    public PerVentana() {
         
         initComponents();
         personajeCtrl = new PersonajeControl();
@@ -47,7 +44,11 @@ public class PersonajeVentana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
+        txtgenero = new javax.swing.JTextField();
+        btnListar = new javax.swing.JButton();
+        btnCrear = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TablaPersonaje = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -55,23 +56,10 @@ public class PersonajeVentana extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
         txtrol = new javax.swing.JTextField();
-        txtgenero = new javax.swing.JTextField();
-        btnListar = new javax.swing.JButton();
-        btnCrear = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TablaPersonaje = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel4.setText("PERSONAJES");
-
-        jLabel1.setText("Nombre actor:");
-
-        jLabel5.setText("Nombre personaje:");
-
-        jLabel2.setText("Rol del Personaje:");
-
-        jLabel3.setText("Genero del Personaje:");
+        setClosable(true);
+        setIconifiable(true);
+        setTitle("PERSONAJE");
 
         btnListar.setText("LISTAR");
         btnListar.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +88,14 @@ public class PersonajeVentana extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TablaPersonaje);
 
+        jLabel1.setText("Nombre actor:");
+
+        jLabel5.setText("Nombre personaje:");
+
+        jLabel2.setText("Rol del Personaje:");
+
+        jLabel3.setText("Genero del Personaje:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -118,7 +114,6 @@ public class PersonajeVentana extends javax.swing.JFrame {
                             .addComponent(txtgenero, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                             .addComponent(txtrol, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                             .addComponent(txtnombre, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtnomper)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
@@ -128,14 +123,12 @@ public class PersonajeVentana extends javax.swing.JFrame {
                         .addComponent(btnCrear)
                         .addGap(50, 50, 50)
                         .addComponent(btnListar)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,40 +210,6 @@ public class PersonajeVentana extends javax.swing.JFrame {
         txtgenero.setText("");
     }//GEN-LAST:event_btnCrearActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PersonajeVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PersonajeVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PersonajeVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PersonajeVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PersonajeVentana().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaPersonaje;
@@ -259,7 +218,6 @@ public class PersonajeVentana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtgenero;
